@@ -46,5 +46,15 @@
     <Compile Include="MarcaNegocio.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DataGateway\DataGateway.csproj">
+      <Project>{76a3b38f-95ad-44ce-90ec-6dd79a48a640}</Project>
+      <Name>DataGateway</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Dominio\Dominio.csproj">
+      <Project>{e81262c8-86ec-4c74-8e81-415780489250}</Project>
+      <Name>Dominio</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

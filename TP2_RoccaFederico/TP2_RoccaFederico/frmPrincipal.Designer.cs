@@ -65,6 +65,7 @@
             this.todosLosArtículosToolStripMenuItem.Name = "todosLosArtículosToolStripMenuItem";
             this.todosLosArtículosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.todosLosArtículosToolStripMenuItem.Text = "Todos los artículos";
+            this.todosLosArtículosToolStripMenuItem.Click += new System.EventHandler(this.todosLosArtículosToolStripMenuItem_Click);
             // 
             // buscarArtículoToolStripMenuItem
             // 

@@ -16,5 +16,13 @@ namespace TP2_RoccaFederico
         {
             InitializeComponent();
         }
+
+        private void todosLosArtículosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //Creo nuevo form de alta de artículos
+            frmAltaArticulo altaArticulo = new frmAltaArticulo();
+            altaArticulo.MdiParent = this;
+            altaArticulo.Show();
+        }
     }
 }
