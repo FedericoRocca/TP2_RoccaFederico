@@ -4,26 +4,28 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DataGateway;
+using Dominio;
 
 namespace Negocio
 {
     public class MarcaNegocio
     {
-        public List<string> getDescripcionMarcas()
+        public List<Marca> getMarcas()
         {
             try
             {
                 DDBBGateway data = new DDBBGateway();
-                data.prepareQuery("select Descripcion from MARCAS");
+                data.prepareQuery("select id, Descripcion from MARCAS");
                 data.sendQuery();
-                List<string> descripciones = new List<string>();
-
-                while(data.getReader().Read())
+                List<Marca> marcas = new List<Marca>();
+                while (data.getReader().Read())
                 {
-                    descripciones.Add( (string)data.getReader()["Descripcion"] );
+                    Marca aux = new Marca();
+                    aux.id = (int)data.getReader()["id"];
+                    aux.descripcion = (string)data.getReader()["Descripcion"];
+                    marcas.Add(aux);
                 }
-
-                return descripciones;
+                return marcas;
             }
             catch (Exception ex)
             {
