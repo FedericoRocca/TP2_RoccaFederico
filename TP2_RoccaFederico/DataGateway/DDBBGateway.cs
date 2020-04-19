@@ -16,7 +16,7 @@ namespace DataGateway
         public DDBBGateway()
         {
             //connection.ConnectionString = "Data Source=DESKTOP-530BJFO\\SQLEXPRESS;Initial Catalog=TA_AzureApp;Integrated Security=True";
-            connection.ConnectionString = "Server=localhost\\SQLEXPRESS;Database=master;Trusted_Connection=True;Initial Catalog=TA_AzureApp;";
+            connection.ConnectionString = "Server=localhost\\SQLEXPRESS;Database=master;Trusted_Connection=True;Initial Catalog=CATALOGO_DB;";
             command.Connection = connection;
             command.Parameters.Clear();
             affectedRows = 0;

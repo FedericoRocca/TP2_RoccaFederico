@@ -40,8 +40,8 @@
             this.lblPrecio = new System.Windows.Forms.Label();
             this.lblCategoria = new System.Windows.Forms.Label();
             this.lblMarca = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.cmbMarca = new System.Windows.Forms.ComboBox();
+            this.cmbCategoria = new System.Windows.Forms.ComboBox();
             this.gpbAltaArticulo = new System.Windows.Forms.GroupBox();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
@@ -146,21 +146,21 @@
             this.lblMarca.TabIndex = 10;
             this.lblMarca.Text = "Marca";
             // 
-            // comboBox1
+            // cmbMarca
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(73, 97);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(215, 21);
-            this.comboBox1.TabIndex = 4;
+            this.cmbMarca.FormattingEnabled = true;
+            this.cmbMarca.Location = new System.Drawing.Point(73, 97);
+            this.cmbMarca.Name = "cmbMarca";
+            this.cmbMarca.Size = new System.Drawing.Size(215, 21);
+            this.cmbMarca.TabIndex = 4;
             // 
-            // comboBox2
+            // cmbCategoria
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(73, 124);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(215, 21);
-            this.comboBox2.TabIndex = 5;
+            this.cmbCategoria.FormattingEnabled = true;
+            this.cmbCategoria.Location = new System.Drawing.Point(73, 124);
+            this.cmbCategoria.Name = "cmbCategoria";
+            this.cmbCategoria.Size = new System.Drawing.Size(215, 21);
+            this.cmbCategoria.TabIndex = 5;
             // 
             // gpbAltaArticulo
             // 
@@ -169,9 +169,9 @@
             this.gpbAltaArticulo.Controls.Add(this.btnGuardar);
             this.gpbAltaArticulo.Controls.Add(this.lblCodigo);
             this.gpbAltaArticulo.Controls.Add(this.lblNombre);
-            this.gpbAltaArticulo.Controls.Add(this.comboBox2);
+            this.gpbAltaArticulo.Controls.Add(this.cmbCategoria);
             this.gpbAltaArticulo.Controls.Add(this.textBox2);
-            this.gpbAltaArticulo.Controls.Add(this.comboBox1);
+            this.gpbAltaArticulo.Controls.Add(this.cmbMarca);
             this.gpbAltaArticulo.Controls.Add(this.lblDescripcion);
             this.gpbAltaArticulo.Controls.Add(this.lblCategoria);
             this.gpbAltaArticulo.Controls.Add(this.textBox3);
@@ -205,6 +205,7 @@
             this.btnCancelar.TabIndex = 9;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // frmAltaArticulo
             // 
@@ -242,8 +243,8 @@
         private System.Windows.Forms.Label lblPrecio;
         private System.Windows.Forms.Label lblCategoria;
         private System.Windows.Forms.Label lblMarca;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox cmbMarca;
+        private System.Windows.Forms.ComboBox cmbCategoria;
         private System.Windows.Forms.GroupBox gpbAltaArticulo;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnGuardar;
