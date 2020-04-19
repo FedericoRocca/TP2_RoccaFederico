@@ -37,10 +37,11 @@
             // 
             // grbListadoArticulos
             // 
+            this.grbListadoArticulos.Controls.Add(this.btnSalir);
             this.grbListadoArticulos.Controls.Add(this.dgvArticulos);
             this.grbListadoArticulos.Location = new System.Drawing.Point(12, 12);
             this.grbListadoArticulos.Name = "grbListadoArticulos";
-            this.grbListadoArticulos.Size = new System.Drawing.Size(740, 295);
+            this.grbListadoArticulos.Size = new System.Drawing.Size(747, 322);
             this.grbListadoArticulos.TabIndex = 0;
             this.grbListadoArticulos.TabStop = false;
             this.grbListadoArticulos.Text = "Listado de artículos";
@@ -52,10 +53,11 @@
             this.dgvArticulos.Name = "dgvArticulos";
             this.dgvArticulos.Size = new System.Drawing.Size(721, 269);
             this.dgvArticulos.TabIndex = 0;
+            this.dgvArticulos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvArticulos_CellContentClick);
             // 
             // btnSalir
             // 
-            this.btnSalir.Location = new System.Drawing.Point(19, 314);
+            this.btnSalir.Location = new System.Drawing.Point(6, 293);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(75, 23);
             this.btnSalir.TabIndex = 1;
@@ -67,8 +69,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(764, 346);
-            this.Controls.Add(this.btnSalir);
+            this.ClientSize = new System.Drawing.Size(773, 343);
             this.Controls.Add(this.grbListadoArticulos);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
