@@ -29,34 +29,46 @@
         private void InitializeComponent()
         {
             this.grbListadoArticulos = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvArticulos = new System.Windows.Forms.DataGridView();
+            this.btnSalir = new System.Windows.Forms.Button();
             this.grbListadoArticulos.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvArticulos)).BeginInit();
             this.SuspendLayout();
             // 
             // grbListadoArticulos
             // 
-            this.grbListadoArticulos.Controls.Add(this.dataGridView1);
+            this.grbListadoArticulos.Controls.Add(this.dgvArticulos);
             this.grbListadoArticulos.Location = new System.Drawing.Point(12, 12);
             this.grbListadoArticulos.Name = "grbListadoArticulos";
-            this.grbListadoArticulos.Size = new System.Drawing.Size(487, 295);
+            this.grbListadoArticulos.Size = new System.Drawing.Size(740, 295);
             this.grbListadoArticulos.TabIndex = 0;
             this.grbListadoArticulos.TabStop = false;
             this.grbListadoArticulos.Text = "Listado de artículos";
             // 
-            // dataGridView1
+            // dgvArticulos
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(7, 20);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(474, 269);
-            this.dataGridView1.TabIndex = 0;
+            this.dgvArticulos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvArticulos.Location = new System.Drawing.Point(13, 19);
+            this.dgvArticulos.Name = "dgvArticulos";
+            this.dgvArticulos.Size = new System.Drawing.Size(721, 269);
+            this.dgvArticulos.TabIndex = 0;
+            // 
+            // btnSalir
+            // 
+            this.btnSalir.Location = new System.Drawing.Point(19, 314);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(75, 23);
+            this.btnSalir.TabIndex = 1;
+            this.btnSalir.Text = "Salir";
+            this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // frmListarArticulos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(764, 346);
+            this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.grbListadoArticulos);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
@@ -67,7 +79,7 @@
             this.Text = "frmListarArticulos";
             this.Load += new System.EventHandler(this.frmListarArticulos_Load);
             this.grbListadoArticulos.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvArticulos)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -75,6 +87,7 @@
         #endregion
 
         private System.Windows.Forms.GroupBox grbListadoArticulos;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvArticulos;
+        private System.Windows.Forms.Button btnSalir;
     }
 }

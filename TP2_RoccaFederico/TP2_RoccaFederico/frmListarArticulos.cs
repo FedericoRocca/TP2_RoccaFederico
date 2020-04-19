@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Dominio;
+using Negocio;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,7 +21,24 @@ namespace TP2_RoccaFederico
 
         private void frmListarArticulos_Load(object sender, EventArgs e)
         {
+            // Cargo el grid con los articulos devueltos
+            try
+            {
+                List<Articulo> articulos = new List<Articulo>();
+                ArticuloNegocio artNegocio = new ArticuloNegocio();
 
+                articulos = artNegocio.getArticulos();
+                dgvArticulos.DataSource = articulos;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
         }
     }
 }

@@ -19,7 +19,19 @@ namespace TP2_RoccaFederico
 
         private void todosLosArtículosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                frmListarArticulos listadoArticulos = new frmListarArticulos();
+                if( !Util.checkIfFormIsAlreadyopen( listadoArticulos.GetType() ) )
+                {
+                    listadoArticulos.MdiParent = this;
+                    listadoArticulos.Show();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
 
         private void agregarArtículoToolStripMenuItem_Click(object sender, EventArgs e)
