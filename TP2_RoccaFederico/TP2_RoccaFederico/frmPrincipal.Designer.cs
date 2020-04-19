@@ -78,6 +78,7 @@
             this.agregarArtículoToolStripMenuItem.Name = "agregarArtículoToolStripMenuItem";
             this.agregarArtículoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.agregarArtículoToolStripMenuItem.Text = "Agregar artículo";
+            this.agregarArtículoToolStripMenuItem.Click += new System.EventHandler(this.agregarArtículoToolStripMenuItem_Click);
             // 
             // modificarArtículoToolStripMenuItem
             // 

@@ -26,6 +26,9 @@ namespace TP2_RoccaFederico
                 MarcaNegocio marcas = new MarcaNegocio();
                 cmbMarca.DataSource = marcas.getDescripcionMarcas();
 
+                CategoriaNegocio categorias = new CategoriaNegocio();
+                cmbCategoria.DataSource = categorias.getDescripcionCategorias();
+
             }
             catch (Exception ex)
             {
