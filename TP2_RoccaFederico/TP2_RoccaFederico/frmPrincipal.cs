@@ -33,5 +33,10 @@ namespace TP2_RoccaFederico
                 altaArticulo.Show();
             }
         }
+
+        private void salirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
     }
 }
