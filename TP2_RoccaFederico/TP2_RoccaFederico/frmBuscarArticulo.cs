@@ -74,9 +74,14 @@ namespace TP2_RoccaFederico
         {
             try
             {
-                if( dgvResultados.Rows.Count > 0 )
+                if (dgvResultados.Rows.Count > 0)
                 {
-
+                    frmAltaArticulo modificaciónArticulo = new frmAltaArticulo( (Articulo)dgvResultados.CurrentRow.DataBoundItem );
+                    if( !Util.checkIfFormIsAlreadyopen(modificaciónArticulo.GetType()) )
+                    {
+                        modificaciónArticulo.ShowDialog();
+                        doSearch();
+                    }
                 }
             }
             catch (Exception ex)

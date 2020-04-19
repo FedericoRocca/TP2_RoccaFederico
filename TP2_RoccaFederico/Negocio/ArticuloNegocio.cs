@@ -139,5 +139,36 @@ namespace Negocio
 				throw ex;
 			}
 		}
-    }
+
+		public bool modificarArticulo(Articulo articulo)
+		{
+			try
+			{
+				DDBBGateway data = new DDBBGateway();
+				data.prepareStatement("update ARTICULOS set ARTICULOS.Nombre = @nombre, " +
+					"ARTICULOS.Descripcion = @descripcion, ARTICULOS.IdMarca = @idMarca, ARTICULOS.IdCategoria = @idCategoria, " +
+					"ARTICULOS.ImagenUrl = @imagenUrl, ARTICULOS.Precio = @precio where ARTICULOS.Codigo = @codigo");
+				data.addParameter("@nombre", articulo.nombre);
+				data.addParameter("@descripcion", articulo.descripcion);
+				data.addParameter("@idMarca", articulo.marca.id);
+				data.addParameter("@idCategoria", articulo.categoria.id);
+				data.addParameter("@imagenUrl", articulo.imagen);
+				data.addParameter("@precio", articulo.precio);
+				data.addParameter("@codigo", articulo.codigo);
+				data.sendStatement();
+				if( data.getAffectedRows() <= 0 )
+				{
+					return false;
+				}
+				else
+				{
+					return true;
+				}
+			}
+			catch (Exception ex)
+			{
+				throw ex;
+			}
+		}
+	}
 }

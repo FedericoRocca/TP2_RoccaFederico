@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.grbBusqueda = new System.Windows.Forms.GroupBox();
-            this.btnBuscar = new System.Windows.Forms.Button();
             this.txbBuscar = new System.Windows.Forms.TextBox();
+            this.btnBuscar = new System.Windows.Forms.Button();
             this.grbResultados = new System.Windows.Forms.GroupBox();
-            this.dgvResultados = new System.Windows.Forms.DataGridView();
-            this.btnSalir = new System.Windows.Forms.Button();
-            this.btnEliminar = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
+            this.btnEliminar = new System.Windows.Forms.Button();
+            this.btnSalir = new System.Windows.Forms.Button();
+            this.dgvResultados = new System.Windows.Forms.DataGridView();
             this.grbBusqueda.SuspendLayout();
             this.grbResultados.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvResultados)).BeginInit();
@@ -52,6 +52,13 @@
             this.grbBusqueda.TabStop = false;
             this.grbBusqueda.Text = "Buscar artículo";
             // 
+            // txbBuscar
+            // 
+            this.txbBuscar.Location = new System.Drawing.Point(87, 21);
+            this.txbBuscar.Name = "txbBuscar";
+            this.txbBuscar.Size = new System.Drawing.Size(189, 20);
+            this.txbBuscar.TabIndex = 1;
+            // 
             // btnBuscar
             // 
             this.btnBuscar.Location = new System.Drawing.Point(6, 19);
@@ -61,13 +68,6 @@
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
-            // 
-            // txbBuscar
-            // 
-            this.txbBuscar.Location = new System.Drawing.Point(87, 21);
-            this.txbBuscar.Name = "txbBuscar";
-            this.txbBuscar.Size = new System.Drawing.Size(189, 20);
-            this.txbBuscar.TabIndex = 1;
             // 
             // grbResultados
             // 
@@ -82,23 +82,15 @@
             this.grbResultados.TabStop = false;
             this.grbResultados.Text = "Resultados";
             // 
-            // dgvResultados
+            // btnModificar
             // 
-            this.dgvResultados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvResultados.Location = new System.Drawing.Point(12, 19);
-            this.dgvResultados.Name = "dgvResultados";
-            this.dgvResultados.Size = new System.Drawing.Size(721, 222);
-            this.dgvResultados.TabIndex = 2;
-            // 
-            // btnSalir
-            // 
-            this.btnSalir.Location = new System.Drawing.Point(7, 247);
-            this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(75, 23);
-            this.btnSalir.TabIndex = 3;
-            this.btnSalir.Text = "Salir";
-            this.btnSalir.UseVisualStyleBackColor = true;
-            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            this.btnModificar.Location = new System.Drawing.Point(577, 247);
+            this.btnModificar.Name = "btnModificar";
+            this.btnModificar.Size = new System.Drawing.Size(75, 23);
+            this.btnModificar.TabIndex = 5;
+            this.btnModificar.Text = "Modificar";
+            this.btnModificar.UseVisualStyleBackColor = true;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // btnEliminar
             // 
@@ -110,15 +102,26 @@
             this.btnEliminar.UseVisualStyleBackColor = true;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
-            // btnModificar
+            // btnSalir
             // 
-            this.btnModificar.Location = new System.Drawing.Point(577, 247);
-            this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(75, 23);
-            this.btnModificar.TabIndex = 5;
-            this.btnModificar.Text = "Modificar";
-            this.btnModificar.UseVisualStyleBackColor = true;
-            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
+            this.btnSalir.Location = new System.Drawing.Point(7, 247);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(75, 23);
+            this.btnSalir.TabIndex = 3;
+            this.btnSalir.Text = "Salir";
+            this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            // 
+            // dgvResultados
+            // 
+            this.dgvResultados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvResultados.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dgvResultados.Location = new System.Drawing.Point(12, 19);
+            this.dgvResultados.MultiSelect = false;
+            this.dgvResultados.Name = "dgvResultados";
+            this.dgvResultados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvResultados.Size = new System.Drawing.Size(721, 222);
+            this.dgvResultados.TabIndex = 2;
             // 
             // frmBuscarArticulo
             // 
@@ -131,6 +134,7 @@
             this.Name = "frmBuscarArticulo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Buscar Articulo";
+            this.TopMost = true;
             this.grbBusqueda.ResumeLayout(false);
             this.grbBusqueda.PerformLayout();
             this.grbResultados.ResumeLayout(false);

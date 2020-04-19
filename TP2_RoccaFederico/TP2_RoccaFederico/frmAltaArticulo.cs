@@ -15,9 +15,23 @@ namespace TP2_RoccaFederico
 {
     public partial class frmAltaArticulo : Form
     {
+        private bool isModification;
         public frmAltaArticulo()
         {
+            isModification = false;
             InitializeComponent();
+        }
+
+        public frmAltaArticulo(Articulo articuloAModificar)
+        {
+            isModification = true;
+            InitializeComponent();
+            txbCodigo.Text = articuloAModificar.codigo;
+            txbDescripcion.Text = articuloAModificar.descripcion;
+            txbImagen.Text = articuloAModificar.imagen;
+            txbNombre.Text = articuloAModificar.nombre;
+            cmbCategoria.SelectedItem = articuloAModificar.categoria;
+            cmbMarca.SelectedItem = articuloAModificar.marca;
         }
 
         private void frmAltaArticulo_Load(object sender, EventArgs e)
@@ -30,6 +44,11 @@ namespace TP2_RoccaFederico
 
                 CategoriaNegocio categorias = new CategoriaNegocio();
                 cmbCategoria.DataSource = categorias.getCategorias();
+
+                if( isModification )
+                {
+                    txbCodigo.ReadOnly = true;
+                }
 
             }
             catch (Exception ex)
@@ -100,14 +119,29 @@ namespace TP2_RoccaFederico
                 }
 
                 ArticuloNegocio artNegocio = new ArticuloNegocio();
-                if(artNegocio.altaNuevoArticulo(articulo) == false)
+                if( isModification )
                 {
-                    throw new ApplicationException("Error al dar de alta el artículo.");
+                    if (artNegocio.modificarArticulo(articulo) == false)
+                    {
+                        throw new ApplicationException("Error al modificar el artículo.");
+                    }
+                    else
+                    {
+                        MessageBox.Show("El artículo fue modificado correctamente");
+                        this.Dispose();
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("El artículo fue dado de alta correctamente");
-                    this.Dispose();
+                    if (artNegocio.altaNuevoArticulo(articulo) == false)
+                    {
+                        throw new ApplicationException("Error al dar de alta el artículo.");
+                    }
+                    else
+                    {
+                        MessageBox.Show("El artículo fue dado de alta correctamente");
+                        this.Dispose();
+                    }
                 }
 
             }

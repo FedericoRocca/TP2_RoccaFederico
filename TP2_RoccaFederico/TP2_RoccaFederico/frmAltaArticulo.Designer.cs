@@ -244,6 +244,7 @@
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Alta artículo";
+            this.TopMost = true;
             this.Load += new System.EventHandler(this.frmAltaArticulo_Load);
             this.gpbAltaArticulo.ResumeLayout(false);
             this.gpbAltaArticulo.PerformLayout();

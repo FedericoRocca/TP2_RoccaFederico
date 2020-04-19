@@ -32,11 +32,8 @@
             this.sistemaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.articulosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.todosLosArtículosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.buscarArtículoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.agregarArtículoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.modificarArtículoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.eliminarArtículoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mstPrincipal.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -69,21 +66,11 @@
             // articulosToolStripMenuItem
             // 
             this.articulosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.todosLosArtículosToolStripMenuItem,
             this.buscarArtículoToolStripMenuItem,
-            this.agregarArtículoToolStripMenuItem,
-            this.modificarArtículoToolStripMenuItem,
-            this.eliminarArtículoToolStripMenuItem});
+            this.agregarArtículoToolStripMenuItem});
             this.articulosToolStripMenuItem.Name = "articulosToolStripMenuItem";
             this.articulosToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
             this.articulosToolStripMenuItem.Text = "&Artículos";
-            // 
-            // todosLosArtículosToolStripMenuItem
-            // 
-            this.todosLosArtículosToolStripMenuItem.Name = "todosLosArtículosToolStripMenuItem";
-            this.todosLosArtículosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.todosLosArtículosToolStripMenuItem.Text = "&Todos los artículos";
-            this.todosLosArtículosToolStripMenuItem.Click += new System.EventHandler(this.todosLosArtículosToolStripMenuItem_Click);
             // 
             // buscarArtículoToolStripMenuItem
             // 
@@ -98,18 +85,6 @@
             this.agregarArtículoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.agregarArtículoToolStripMenuItem.Text = "&Agregar artículo";
             this.agregarArtículoToolStripMenuItem.Click += new System.EventHandler(this.agregarArtículoToolStripMenuItem_Click);
-            // 
-            // modificarArtículoToolStripMenuItem
-            // 
-            this.modificarArtículoToolStripMenuItem.Name = "modificarArtículoToolStripMenuItem";
-            this.modificarArtículoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.modificarArtículoToolStripMenuItem.Text = "&Modificar artículo";
-            // 
-            // eliminarArtículoToolStripMenuItem
-            // 
-            this.eliminarArtículoToolStripMenuItem.Name = "eliminarArtículoToolStripMenuItem";
-            this.eliminarArtículoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.eliminarArtículoToolStripMenuItem.Text = "&Eliminar artículo";
             // 
             // frmPrincipal
             // 
@@ -136,11 +111,8 @@
 
         private System.Windows.Forms.MenuStrip mstPrincipal;
         private System.Windows.Forms.ToolStripMenuItem articulosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem todosLosArtículosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem buscarArtículoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem agregarArtículoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem modificarArtículoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem eliminarArtículoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sistemaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
     }
