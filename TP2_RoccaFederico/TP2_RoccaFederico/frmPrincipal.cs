@@ -50,5 +50,17 @@ namespace TP2_RoccaFederico
         {
             this.Dispose();
         }
+
+        private void buscarArtículoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //Si no está abierto abro el nuevo form de alta de articulos
+            frmBuscarArticulo busquedaArticulo = new frmBuscarArticulo();
+            if (!Util.checkIfFormIsAlreadyopen(busquedaArticulo.GetType()))
+            {
+
+                busquedaArticulo.MdiParent = this;
+                busquedaArticulo.Show();
+            }
+        }
     }
 }
