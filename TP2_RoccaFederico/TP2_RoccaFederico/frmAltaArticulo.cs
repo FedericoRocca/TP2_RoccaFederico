@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Negocio;
+using Dominio;
 
 namespace TP2_RoccaFederico
 {
@@ -27,7 +28,12 @@ namespace TP2_RoccaFederico
                 cmbMarca.DataSource = marcas.getDescripcionMarcas();
 
                 CategoriaNegocio categorias = new CategoriaNegocio();
-                cmbCategoria.DataSource = categorias.getDescripcionCategorias();
+                List<string> descripciones = new List<string>();
+                foreach (Categoria cat in categorias.getCategorias())
+                {
+                    descripciones.Add(cat.descripcion);
+                }
+                cmbCategoria.DataSource = descripciones;
 
             }
             catch (Exception ex)
@@ -40,6 +46,19 @@ namespace TP2_RoccaFederico
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Dispose();
+        }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Obtengo todos los datos que cargó el usuario y los guardo en un objeto
+                Articulo articulo = new Articulo();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
     }
 }
