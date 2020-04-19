@@ -28,12 +28,53 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.grbListadoArticulos = new System.Windows.Forms.GroupBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.grbListadoArticulos.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // grbListadoArticulos
+            // 
+            this.grbListadoArticulos.Controls.Add(this.dataGridView1);
+            this.grbListadoArticulos.Location = new System.Drawing.Point(12, 12);
+            this.grbListadoArticulos.Name = "grbListadoArticulos";
+            this.grbListadoArticulos.Size = new System.Drawing.Size(487, 295);
+            this.grbListadoArticulos.TabIndex = 0;
+            this.grbListadoArticulos.TabStop = false;
+            this.grbListadoArticulos.Text = "Listado de artículos";
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(7, 20);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(474, 269);
+            this.dataGridView1.TabIndex = 0;
+            // 
+            // frmListarArticulos
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.grbListadoArticulos);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.Name = "frmListarArticulos";
+            this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmListarArticulos";
+            this.Load += new System.EventHandler(this.frmListarArticulos_Load);
+            this.grbListadoArticulos.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private System.Windows.Forms.GroupBox grbListadoArticulos;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }

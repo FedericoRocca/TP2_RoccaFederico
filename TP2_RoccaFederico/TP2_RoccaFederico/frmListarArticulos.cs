@@ -16,5 +16,10 @@ namespace TP2_RoccaFederico
         {
             InitializeComponent();
         }
+
+        private void frmListarArticulos_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
