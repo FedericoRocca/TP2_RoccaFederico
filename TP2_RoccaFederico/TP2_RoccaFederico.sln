@@ -5,6 +5,15 @@ VisualStudioVersion = 16.0.29411.108
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TP2_RoccaFederico", "TP2_RoccaFederico\TP2_RoccaFederico.csproj", "{130802BD-F483-4986-8A71-25A7EA699629}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{68ABBC87-F84F-440B-914C-FB6AE0CB8622}"
+	ProjectSection(SolutionItems) = preProject
+		Consigna.txt = Consigna.txt
+		DDBB.sql = DDBB.sql
+		Modelo de dominio.jpg = Modelo de dominio.jpg
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dominio", "Dominio\Dominio.csproj", "{E81262C8-86EC-4C74-8E81-415780489250}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +24,10 @@ Global
 		{130802BD-F483-4986-8A71-25A7EA699629}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{130802BD-F483-4986-8A71-25A7EA699629}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{130802BD-F483-4986-8A71-25A7EA699629}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E81262C8-86EC-4C74-8E81-415780489250}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E81262C8-86EC-4C74-8E81-415780489250}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E81262C8-86EC-4C74-8E81-415780489250}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E81262C8-86EC-4C74-8E81-415780489250}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
