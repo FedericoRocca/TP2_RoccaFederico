@@ -77,6 +77,29 @@ namespace Negocio
 			}
         }
 
+		public bool eliminaciónFisicaArticulo(Articulo aBorrar)
+		{
+			try
+			{
+				DDBBGateway data = new DDBBGateway();
+				data.prepareQuery("delete from ARTICULOS where Codigo = @codigo");
+				data.addParameter("@codigo", aBorrar.codigo);
+				data.sendStatement();
+				if( data.getAffectedRows() <= 0 )
+				{
+					return false;
+				}	
+				else
+				{
+					return true;
+				}
+			}
+			catch (Exception ex)
+			{
+				throw ex;
+			}
+		}
+
 		public List<Articulo> getArticulosBySearch(string term)
 		{
 			try
