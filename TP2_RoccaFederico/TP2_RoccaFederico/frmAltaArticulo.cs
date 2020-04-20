@@ -16,6 +16,7 @@ namespace TP2_RoccaFederico
     public partial class frmAltaArticulo : Form
     {
         private bool isModification;
+        private Articulo registro = new Articulo();
         public frmAltaArticulo()
         {
             isModification = false;
@@ -25,13 +26,9 @@ namespace TP2_RoccaFederico
         public frmAltaArticulo(Articulo articuloAModificar)
         {
             isModification = true;
+            registro = articuloAModificar;
             InitializeComponent();
-            txbCodigo.Text = articuloAModificar.codigo;
-            txbDescripcion.Text = articuloAModificar.descripcion;
-            txbImagen.Text = articuloAModificar.imagen;
-            txbNombre.Text = articuloAModificar.nombre;
-            cmbCategoria.SelectedItem = articuloAModificar.categoria;
-            cmbMarca.SelectedItem = articuloAModificar.marca;
+
         }
 
         private void frmAltaArticulo_Load(object sender, EventArgs e)
@@ -47,6 +44,12 @@ namespace TP2_RoccaFederico
 
                 if( isModification )
                 {
+                    txbCodigo.Text = registro.codigo;
+                    txbDescripcion.Text = registro.descripcion;
+                    txbImagen.Text = registro.imagen;
+                    txbNombre.Text = registro.nombre;
+                    cmbCategoria.SelectedIndex = registro.categoria.id -1;
+                    cmbMarca.SelectedIndex = registro.marca.id -1;
                     txbCodigo.ReadOnly = true;
                 }
 
