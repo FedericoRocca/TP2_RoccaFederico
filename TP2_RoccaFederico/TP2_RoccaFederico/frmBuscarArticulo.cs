@@ -107,12 +107,41 @@ namespace TP2_RoccaFederico
                 else
                 {
                     dgvResultados.DataSource = resultados;
+                    dgvResultados.Columns[0].Visible = false;
+                    dgvResultados.CurrentCell = dgvResultados[1,0];
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
             }
+        }
+
+        private void btnVerDetalle_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                frmVerArticulo verArticulo = new frmVerArticulo((Articulo)dgvResultados.CurrentRow.DataBoundItem);
+                if (!Util.checkIfFormIsAlreadyopen(verArticulo.GetType()))
+                {
+                    verArticulo.ShowDialog();
+                }
+            }
+            catch (NullReferenceException)
+            {
+                MessageBox.Show("Para ver el detalle debe seleccionar un artículo.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Para listar todos los artículos presione en buscar sin haber ingresado texto en el cuadro de busqueda." + System.Environment.NewLine +
+                System.Environment.NewLine +
+                "La busqueda se realiza por código, nombre, descripción, marca, categoria o precio.");
         }
     }
 }

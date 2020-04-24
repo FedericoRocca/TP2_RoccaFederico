@@ -36,6 +36,8 @@
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.dgvResultados = new System.Windows.Forms.DataGridView();
+            this.btnVerDetalle = new System.Windows.Forms.Button();
+            this.btnAyuda = new System.Windows.Forms.Button();
             this.grbBusqueda.SuspendLayout();
             this.grbResultados.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvResultados)).BeginInit();
@@ -43,6 +45,7 @@
             // 
             // grbBusqueda
             // 
+            this.grbBusqueda.Controls.Add(this.btnAyuda);
             this.grbBusqueda.Controls.Add(this.txbBuscar);
             this.grbBusqueda.Controls.Add(this.btnBuscar);
             this.grbBusqueda.Location = new System.Drawing.Point(13, 13);
@@ -71,6 +74,7 @@
             // 
             // grbResultados
             // 
+            this.grbResultados.Controls.Add(this.btnVerDetalle);
             this.grbResultados.Controls.Add(this.btnModificar);
             this.grbResultados.Controls.Add(this.btnEliminar);
             this.grbResultados.Controls.Add(this.btnSalir);
@@ -123,6 +127,27 @@
             this.dgvResultados.Size = new System.Drawing.Size(721, 222);
             this.dgvResultados.TabIndex = 2;
             // 
+            // btnVerDetalle
+            // 
+            this.btnVerDetalle.Location = new System.Drawing.Point(496, 247);
+            this.btnVerDetalle.Name = "btnVerDetalle";
+            this.btnVerDetalle.Size = new System.Drawing.Size(75, 23);
+            this.btnVerDetalle.TabIndex = 6;
+            this.btnVerDetalle.Text = "Ver detalle";
+            this.btnVerDetalle.UseVisualStyleBackColor = true;
+            this.btnVerDetalle.Click += new System.EventHandler(this.btnVerDetalle_Click);
+            // 
+            // btnAyuda
+            // 
+            this.btnAyuda.BackColor = System.Drawing.SystemColors.Control;
+            this.btnAyuda.Location = new System.Drawing.Point(283, 19);
+            this.btnAyuda.Name = "btnAyuda";
+            this.btnAyuda.Size = new System.Drawing.Size(23, 23);
+            this.btnAyuda.TabIndex = 2;
+            this.btnAyuda.Text = "?";
+            this.btnAyuda.UseVisualStyleBackColor = false;
+            this.btnAyuda.Click += new System.EventHandler(this.button1_Click);
+            // 
             // frmBuscarArticulo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -153,5 +178,7 @@
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.Button btnVerDetalle;
+        private System.Windows.Forms.Button btnAyuda;
     }
 }
