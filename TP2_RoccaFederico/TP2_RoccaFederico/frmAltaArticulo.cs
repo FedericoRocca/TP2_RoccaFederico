@@ -48,8 +48,14 @@ namespace TP2_RoccaFederico
                     txbDescripcion.Text = registro.descripcion;
                     txbImagen.Text = registro.imagen;
                     txbNombre.Text = registro.nombre;
-                    cmbCategoria.SelectedIndex = registro.categoria.id -1;
-                    cmbMarca.SelectedIndex = registro.marca.id -1;
+
+                    cmbCategoria.ValueMember = "id";
+                    cmbCategoria.DisplayMember = "descripcion";
+                    cmbMarca.ValueMember = "id";
+                    cmbMarca.DisplayMember = "descripcion";
+                    cmbCategoria.SelectedValue = registro.categoria.id;
+                    cmbMarca.SelectedValue = registro.marca.id;
+
                     txbCodigo.ReadOnly = true;
                 }
 
