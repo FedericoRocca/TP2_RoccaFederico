@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Negocio;
 
 namespace TP2_RoccaFederico
 {
@@ -30,6 +31,13 @@ namespace TP2_RoccaFederico
                 txbImagen.Text = articulo.imagen;
                 txbNombre.Text = articulo.nombre;
                 txbPrecio.Text = articulo.precio.ToString();
+
+                MarcaNegocio marcas = new MarcaNegocio();
+                CategoriaNegocio categorias = new CategoriaNegocio();
+
+                cmbMarca.DataSource = marcas.getMarcas();
+                cmbCategoria.DataSource = categorias.getCategorias();
+
                 cmbCategoria.ValueMember = "id";
                 cmbCategoria.DisplayMember = "descripcion";
                 cmbMarca.ValueMember = "id";
