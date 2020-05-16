@@ -29,22 +29,22 @@
         private void InitializeComponent()
         {
             this.gpbVerArticulo = new System.Windows.Forms.GroupBox();
-            this.lblCodigo = new System.Windows.Forms.Label();
-            this.txbCodigo = new System.Windows.Forms.TextBox();
-            this.txbNombre = new System.Windows.Forms.TextBox();
-            this.lvlNombre = new System.Windows.Forms.Label();
-            this.txbDescripcion = new System.Windows.Forms.TextBox();
-            this.lblDescripcion = new System.Windows.Forms.Label();
-            this.txbImagen = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txbPrecio = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
+            this.btnSalir = new System.Windows.Forms.Button();
+            this.ptbImagen = new System.Windows.Forms.PictureBox();
+            this.cmbCategoria = new System.Windows.Forms.ComboBox();
+            this.cmbMarca = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.cmbMarca = new System.Windows.Forms.ComboBox();
-            this.cmbCategoria = new System.Windows.Forms.ComboBox();
-            this.ptbImagen = new System.Windows.Forms.PictureBox();
-            this.btnSalir = new System.Windows.Forms.Button();
+            this.txbPrecio = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txbImagen = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txbDescripcion = new System.Windows.Forms.TextBox();
+            this.lblDescripcion = new System.Windows.Forms.Label();
+            this.txbNombre = new System.Windows.Forms.TextBox();
+            this.lvlNombre = new System.Windows.Forms.Label();
+            this.txbCodigo = new System.Windows.Forms.TextBox();
+            this.lblCodigo = new System.Windows.Forms.Label();
             this.gpbVerArticulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbImagen)).BeginInit();
             this.SuspendLayout();
@@ -74,90 +74,44 @@
             this.gpbVerArticulo.TabStop = false;
             this.gpbVerArticulo.Text = "Detalles del artículo";
             // 
-            // lblCodigo
+            // btnSalir
             // 
-            this.lblCodigo.AutoSize = true;
-            this.lblCodigo.Location = new System.Drawing.Point(30, 22);
-            this.lblCodigo.Name = "lblCodigo";
-            this.lblCodigo.Size = new System.Drawing.Size(40, 13);
-            this.lblCodigo.TabIndex = 0;
-            this.lblCodigo.Text = "Código";
+            this.btnSalir.Location = new System.Drawing.Point(10, 203);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(75, 23);
+            this.btnSalir.TabIndex = 15;
+            this.btnSalir.Text = "Salir";
+            this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
-            // txbCodigo
+            // ptbImagen
             // 
-            this.txbCodigo.Location = new System.Drawing.Point(76, 19);
-            this.txbCodigo.Name = "txbCodigo";
-            this.txbCodigo.ReadOnly = true;
-            this.txbCodigo.Size = new System.Drawing.Size(215, 20);
-            this.txbCodigo.TabIndex = 1;
+            this.ptbImagen.Location = new System.Drawing.Point(297, 16);
+            this.ptbImagen.Name = "ptbImagen";
+            this.ptbImagen.Size = new System.Drawing.Size(182, 182);
+            this.ptbImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.ptbImagen.TabIndex = 14;
+            this.ptbImagen.TabStop = false;
             // 
-            // txbNombre
+            // cmbCategoria
             // 
-            this.txbNombre.Location = new System.Drawing.Point(76, 45);
-            this.txbNombre.Name = "txbNombre";
-            this.txbNombre.ReadOnly = true;
-            this.txbNombre.Size = new System.Drawing.Size(215, 20);
-            this.txbNombre.TabIndex = 2;
+            this.cmbCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbCategoria.Enabled = false;
+            this.cmbCategoria.FormattingEnabled = true;
+            this.cmbCategoria.Location = new System.Drawing.Point(76, 124);
+            this.cmbCategoria.Name = "cmbCategoria";
+            this.cmbCategoria.Size = new System.Drawing.Size(215, 21);
+            this.cmbCategoria.TabIndex = 5;
             // 
-            // lvlNombre
+            // cmbMarca
             // 
-            this.lvlNombre.AutoSize = true;
-            this.lvlNombre.Location = new System.Drawing.Point(26, 48);
-            this.lvlNombre.Name = "lvlNombre";
-            this.lvlNombre.Size = new System.Drawing.Size(44, 13);
-            this.lvlNombre.TabIndex = 2;
-            this.lvlNombre.Text = "Nombre";
-            // 
-            // txbDescripcion
-            // 
-            this.txbDescripcion.Location = new System.Drawing.Point(76, 71);
-            this.txbDescripcion.Name = "txbDescripcion";
-            this.txbDescripcion.ReadOnly = true;
-            this.txbDescripcion.Size = new System.Drawing.Size(215, 20);
-            this.txbDescripcion.TabIndex = 3;
-            // 
-            // lblDescripcion
-            // 
-            this.lblDescripcion.AutoSize = true;
-            this.lblDescripcion.Location = new System.Drawing.Point(7, 74);
-            this.lblDescripcion.Name = "lblDescripcion";
-            this.lblDescripcion.Size = new System.Drawing.Size(63, 13);
-            this.lblDescripcion.TabIndex = 4;
-            this.lblDescripcion.Text = "Descripción";
-            // 
-            // txbImagen
-            // 
-            this.txbImagen.Location = new System.Drawing.Point(76, 152);
-            this.txbImagen.Name = "txbImagen";
-            this.txbImagen.ReadOnly = true;
-            this.txbImagen.Size = new System.Drawing.Size(215, 20);
-            this.txbImagen.TabIndex = 6;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(28, 155);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(42, 13);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "Imagen";
-            // 
-            // txbPrecio
-            // 
-            this.txbPrecio.Location = new System.Drawing.Point(76, 178);
-            this.txbPrecio.Name = "txbPrecio";
-            this.txbPrecio.ReadOnly = true;
-            this.txbPrecio.Size = new System.Drawing.Size(215, 20);
-            this.txbPrecio.TabIndex = 7;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(33, 181);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(37, 13);
-            this.label5.TabIndex = 8;
-            this.label5.Text = "Precio";
+            this.cmbMarca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbMarca.Enabled = false;
+            this.cmbMarca.FormattingEnabled = true;
+            this.cmbMarca.Location = new System.Drawing.Point(76, 97);
+            this.cmbMarca.Name = "cmbMarca";
+            this.cmbMarca.Size = new System.Drawing.Size(215, 21);
+            this.cmbMarca.TabIndex = 4;
             // 
             // label6
             // 
@@ -177,42 +131,90 @@
             this.label7.TabIndex = 10;
             this.label7.Text = "Marca";
             // 
-            // cmbMarca
+            // txbPrecio
             // 
-            this.cmbMarca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbMarca.FormattingEnabled = true;
-            this.cmbMarca.Location = new System.Drawing.Point(76, 97);
-            this.cmbMarca.Name = "cmbMarca";
-            this.cmbMarca.Size = new System.Drawing.Size(215, 21);
-            this.cmbMarca.TabIndex = 4;
+            this.txbPrecio.Location = new System.Drawing.Point(76, 178);
+            this.txbPrecio.Name = "txbPrecio";
+            this.txbPrecio.ReadOnly = true;
+            this.txbPrecio.Size = new System.Drawing.Size(215, 20);
+            this.txbPrecio.TabIndex = 7;
             // 
-            // cmbCategoria
+            // label5
             // 
-            this.cmbCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbCategoria.FormattingEnabled = true;
-            this.cmbCategoria.Location = new System.Drawing.Point(76, 124);
-            this.cmbCategoria.Name = "cmbCategoria";
-            this.cmbCategoria.Size = new System.Drawing.Size(215, 21);
-            this.cmbCategoria.TabIndex = 5;
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(33, 181);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(37, 13);
+            this.label5.TabIndex = 8;
+            this.label5.Text = "Precio";
             // 
-            // ptbImagen
+            // txbImagen
             // 
-            this.ptbImagen.Location = new System.Drawing.Point(297, 16);
-            this.ptbImagen.Name = "ptbImagen";
-            this.ptbImagen.Size = new System.Drawing.Size(182, 182);
-            this.ptbImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.ptbImagen.TabIndex = 14;
-            this.ptbImagen.TabStop = false;
+            this.txbImagen.Location = new System.Drawing.Point(76, 152);
+            this.txbImagen.Name = "txbImagen";
+            this.txbImagen.ReadOnly = true;
+            this.txbImagen.Size = new System.Drawing.Size(215, 20);
+            this.txbImagen.TabIndex = 6;
             // 
-            // btnSalir
+            // label4
             // 
-            this.btnSalir.Location = new System.Drawing.Point(10, 203);
-            this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(75, 23);
-            this.btnSalir.TabIndex = 15;
-            this.btnSalir.Text = "Salir";
-            this.btnSalir.UseVisualStyleBackColor = true;
-            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(28, 155);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(42, 13);
+            this.label4.TabIndex = 6;
+            this.label4.Text = "Imagen";
+            // 
+            // txbDescripcion
+            // 
+            this.txbDescripcion.Location = new System.Drawing.Point(76, 71);
+            this.txbDescripcion.Name = "txbDescripcion";
+            this.txbDescripcion.ReadOnly = true;
+            this.txbDescripcion.Size = new System.Drawing.Size(215, 20);
+            this.txbDescripcion.TabIndex = 3;
+            // 
+            // lblDescripcion
+            // 
+            this.lblDescripcion.AutoSize = true;
+            this.lblDescripcion.Location = new System.Drawing.Point(7, 74);
+            this.lblDescripcion.Name = "lblDescripcion";
+            this.lblDescripcion.Size = new System.Drawing.Size(63, 13);
+            this.lblDescripcion.TabIndex = 4;
+            this.lblDescripcion.Text = "Descripción";
+            // 
+            // txbNombre
+            // 
+            this.txbNombre.Location = new System.Drawing.Point(76, 45);
+            this.txbNombre.Name = "txbNombre";
+            this.txbNombre.ReadOnly = true;
+            this.txbNombre.Size = new System.Drawing.Size(215, 20);
+            this.txbNombre.TabIndex = 2;
+            // 
+            // lvlNombre
+            // 
+            this.lvlNombre.AutoSize = true;
+            this.lvlNombre.Location = new System.Drawing.Point(26, 48);
+            this.lvlNombre.Name = "lvlNombre";
+            this.lvlNombre.Size = new System.Drawing.Size(44, 13);
+            this.lvlNombre.TabIndex = 2;
+            this.lvlNombre.Text = "Nombre";
+            // 
+            // txbCodigo
+            // 
+            this.txbCodigo.Location = new System.Drawing.Point(76, 19);
+            this.txbCodigo.Name = "txbCodigo";
+            this.txbCodigo.ReadOnly = true;
+            this.txbCodigo.Size = new System.Drawing.Size(215, 20);
+            this.txbCodigo.TabIndex = 1;
+            // 
+            // lblCodigo
+            // 
+            this.lblCodigo.AutoSize = true;
+            this.lblCodigo.Location = new System.Drawing.Point(30, 22);
+            this.lblCodigo.Name = "lblCodigo";
+            this.lblCodigo.Size = new System.Drawing.Size(40, 13);
+            this.lblCodigo.TabIndex = 0;
+            this.lblCodigo.Text = "Código";
             // 
             // frmVerArticulo
             // 
