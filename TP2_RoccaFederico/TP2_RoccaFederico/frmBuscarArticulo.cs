@@ -63,6 +63,10 @@ namespace TP2_RoccaFederico
                         }
                     }
                 }
+                else
+                {
+                    MessageBox.Show("Debe seleccionar un artículo para eliminar.");
+                }
             }
             catch (Exception ex)
             {
@@ -82,6 +86,10 @@ namespace TP2_RoccaFederico
                         modificaciónArticulo.ShowDialog();
                         doSearch();
                     }
+                }
+                else
+                {
+                    MessageBox.Show("Debe seleccionar un artículo para modificar.");
                 }
             }
             catch (Exception ex)
