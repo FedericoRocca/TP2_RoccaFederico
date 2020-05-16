@@ -48,6 +48,7 @@ namespace TP2_RoccaFederico
                     txbDescripcion.Text = registro.descripcion;
                     txbImagen.Text = registro.imagen;
                     txbNombre.Text = registro.nombre;
+                    txbPrecio.Value = decimal.Parse(registro.precio.ToString());
 
                     cmbCategoria.ValueMember = "id";
                     cmbCategoria.DisplayMember = "descripcion";
@@ -55,7 +56,6 @@ namespace TP2_RoccaFederico
                     cmbMarca.DisplayMember = "descripcion";
                     cmbCategoria.SelectedValue = registro.categoria.id;
                     cmbMarca.SelectedValue = registro.marca.id;
-
                     txbCodigo.ReadOnly = true;
                 }
 
@@ -118,13 +118,13 @@ namespace TP2_RoccaFederico
                     articulo.imagen = txbImagen.Text;
                 }
 
-                if (nudPrecio.Text.Trim() == "")
+                if (txbPrecio.Text.Trim() == "")
                 {
                     throw new InvalidDataException("El precio ingresado es incorrecto");
                 }
                 else
                 {
-                    articulo.precio = double.Parse(nudPrecio.Text);
+                    articulo.precio = double.Parse(txbPrecio.Text);
                 }
 
                 ArticuloNegocio artNegocio = new ArticuloNegocio();

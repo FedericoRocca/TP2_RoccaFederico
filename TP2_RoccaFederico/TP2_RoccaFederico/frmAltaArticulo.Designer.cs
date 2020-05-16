@@ -42,11 +42,11 @@
             this.cmbMarca = new System.Windows.Forms.ComboBox();
             this.cmbCategoria = new System.Windows.Forms.ComboBox();
             this.gpbAltaArticulo = new System.Windows.Forms.GroupBox();
-            this.nudPrecio = new System.Windows.Forms.NumericUpDown();
+            this.txbPrecio = new System.Windows.Forms.NumericUpDown();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.gpbAltaArticulo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudPrecio)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txbPrecio)).BeginInit();
             this.SuspendLayout();
             // 
             // lblCodigo
@@ -160,7 +160,7 @@
             // 
             // gpbAltaArticulo
             // 
-            this.gpbAltaArticulo.Controls.Add(this.nudPrecio);
+            this.gpbAltaArticulo.Controls.Add(this.txbPrecio);
             this.gpbAltaArticulo.Controls.Add(this.btnCancelar);
             this.gpbAltaArticulo.Controls.Add(this.txbCodigo);
             this.gpbAltaArticulo.Controls.Add(this.btnGuardar);
@@ -183,29 +183,29 @@
             this.gpbAltaArticulo.TabStop = false;
             this.gpbAltaArticulo.Text = "Datos del artículo";
             // 
-            // nudPrecio
+            // txbPrecio
             // 
-            this.nudPrecio.DecimalPlaces = 2;
-            this.nudPrecio.Location = new System.Drawing.Point(73, 178);
-            this.nudPrecio.Maximum = new decimal(new int[] {
+            this.txbPrecio.DecimalPlaces = 2;
+            this.txbPrecio.Location = new System.Drawing.Point(73, 178);
+            this.txbPrecio.Maximum = new decimal(new int[] {
             2147483646,
             0,
             0,
             0});
-            this.nudPrecio.Minimum = new decimal(new int[] {
+            this.txbPrecio.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             131072});
-            this.nudPrecio.Name = "nudPrecio";
-            this.nudPrecio.Size = new System.Drawing.Size(215, 20);
-            this.nudPrecio.TabIndex = 12;
-            this.nudPrecio.Value = new decimal(new int[] {
+            this.txbPrecio.Name = "txbPrecio";
+            this.txbPrecio.Size = new System.Drawing.Size(215, 20);
+            this.txbPrecio.TabIndex = 12;
+            this.txbPrecio.Value = new decimal(new int[] {
             1,
             0,
             0,
             131072});
-            this.nudPrecio.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
+            this.txbPrecio.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
             // 
             // btnCancelar
             // 
@@ -248,7 +248,7 @@
             this.Load += new System.EventHandler(this.frmAltaArticulo_Load);
             this.gpbAltaArticulo.ResumeLayout(false);
             this.gpbAltaArticulo.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudPrecio)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txbPrecio)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -271,6 +271,6 @@
         private System.Windows.Forms.GroupBox gpbAltaArticulo;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnGuardar;
-        private System.Windows.Forms.NumericUpDown nudPrecio;
+        private System.Windows.Forms.NumericUpDown txbPrecio;
     }
 }
