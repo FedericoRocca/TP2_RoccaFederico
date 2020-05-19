@@ -1,9 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.UI;
-using System.Web.UI.WebControls;
+using Negocio;
+using Dominio;
+using System.Collections.Generic;
 
 namespace TP3_RoccaFederico
 {
@@ -11,7 +10,17 @@ namespace TP3_RoccaFederico
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+			try
+			{
+				throw new Exception("asdasdasd");
+				ArticuloNegocio artNegocio = new ArticuloNegocio();
+				List<Articulo> articulos = new List<Articulo>();
+			}
+			catch (Exception ex)
+			{
+				Session.Add( Session.SessionID + "exception", ex );
+				Response.Redirect("error.aspx");
+			}
         }
     }
 }
