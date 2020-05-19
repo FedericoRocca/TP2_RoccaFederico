@@ -8,13 +8,13 @@ namespace TP3_RoccaFederico
 {
     public partial class _Default : Page
     {
-        protected void Page_Load(object sender, EventArgs e)
+		public List<Articulo> articulos = new List<Articulo>();
+		protected void Page_Load(object sender, EventArgs e)
         {
 			try
 			{
-				throw new Exception("asdasdasd");
 				ArticuloNegocio artNegocio = new ArticuloNegocio();
-				List<Articulo> articulos = new List<Articulo>();
+				articulos = artNegocio.getArticulos();
 			}
 			catch (Exception ex)
 			{
