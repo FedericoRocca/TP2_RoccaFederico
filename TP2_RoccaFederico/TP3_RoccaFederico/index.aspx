@@ -17,7 +17,7 @@
                             <p class="card-text"><% = item.descripcion %></p>
                         </div>
                         <div class="card-body">
-                            <a href="#" class="btn btn-primary">Comprar</a>
+                            <a href="index.aspx?artID=<% = item.id.ToString() %>" class="btn btn-primary btn-block">Agregar al carrito</a>
                         </div>
                     </div>
             

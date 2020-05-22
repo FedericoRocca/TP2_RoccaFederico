@@ -13,5 +13,18 @@ namespace TP3_RoccaFederico
         {
 
         }
+
+        protected void btnCarrito_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Response.Redirect("Carrito.aspx");
+            }
+            catch (Exception ex)
+            {
+                Session.Add(Session.SessionID + "exception", ex);
+                Response.Redirect("error.aspx");
+            }
+        }
     }
 }
