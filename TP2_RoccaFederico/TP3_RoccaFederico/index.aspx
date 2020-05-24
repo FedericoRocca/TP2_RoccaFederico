@@ -16,7 +16,7 @@
     </div>
     <div class="row">
         <%-- Row tarjetas --%>
-        <div class="card-deck">
+        <div class="card-columns">
             <asp:Repeater runat="server" ID="articulosRepeater">
                 <ItemTemplate>
                     <div class="card">
@@ -28,7 +28,7 @@
                         <asp:Button 
                             ID="btnAgregarAlCarrito" 
                             CssClass="btn btn-primary"
-                            Text="Comprar" 
+                            Text="Agregar al carrito" 
                             CommandArgument='<%#Eval("id")%>'
                             CommandName="articuloSeleccionado" 
                             runat="server"

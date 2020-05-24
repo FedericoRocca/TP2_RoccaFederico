@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Dominio;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -9,12 +10,17 @@ namespace TP3_RoccaFederico
 {
     public partial class Carrito : System.Web.UI.Page
     {
-
-        protected void Page_Load(object sender, EventArgs e)
+		public CarritoArticulos carritoArticulos = new CarritoArticulos();
+		protected void Page_Load(object sender, EventArgs e)
         {
 			try
 			{
-
+				if(Session[Session.SessionID + "carrito"] != null)
+				{
+					carritoArticulos = (CarritoArticulos)Session[Session.SessionID + "carrito"];
+					carritoRepeater.DataSource = carritoArticulos.elementos;
+					carritoRepeater.DataBind();
+				}
 			}
 			catch (Exception ex)
 			{
