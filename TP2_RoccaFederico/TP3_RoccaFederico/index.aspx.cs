@@ -34,9 +34,14 @@ namespace TP3_RoccaFederico
 		{
 			try
 			{
+				if(Session[Session.SessionID + "carrito"] != null)
+				{
+					miCarrito = (CarritoArticulos)Session[Session.SessionID + "carrito"];
+				}
 				ArticuloNegocio artNegocio = new ArticuloNegocio();
 				int idArticulo = int.Parse(((Button)sender).CommandArgument);
 				miCarrito.elementos.Add( artNegocio.getArticuloByID(idArticulo) );
+				Session.Add( Session.SessionID + "carrito", miCarrito );
 
 			}
 			catch (Exception ex)
