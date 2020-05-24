@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Carrito.aspx.cs" Inherits="TP3_RoccaFederico.Carrito" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Carrito.aspx.cs" Inherits="TP3_RoccaFederico.Carrito" EnableEventValidation="false" %>
 
 <!DOCTYPE html>
 
@@ -25,40 +25,37 @@
         </div>
 
         <div class="row">
-            <asp:Repeater runat="server" ID="carritoRepeater">
-                <ItemTemplate>
-                    <%--                    <div class="card">
-                        <img src="<%#Eval("imagen")%>" class="card-img-top">
-                        <div class="card-body">
-                            <h5 class="card-title"><%#Eval("nombre")%></h5>
-                            <p class="card-text"><%#Eval("descripcion")%></p>
-                        </div>
-                        <asp:Button
-                            ID="btnAgregarAlCarrito"
-                            CssClass="btn btn-primary"
-                            Text="Agregar al carrito"
-                            CommandArgument='<%#Eval("id")%>'
-                            CommandName="articuloSeleccionado"
-                            runat="server"
-                            OnClick="btnAgregarAlCarrito_Click" />
-                    </div>--%>
+            <div class="card-columns">
+                <asp:Repeater runat="server" ID="carritoRepeater">
+                    <ItemTemplate>
+                        <div class="card mb-3" style="max-width: 540px;">
+                            <div class="row no-gutters">
+                                <div class="col-md-4">
+                                    <img src="<%#Eval("imagen")%>" class="card-img">
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="card-body">
+                                        <h5 class="card-title"><%#Eval("nombre")%></h5>
+                                        <p class="card-text"><%#Eval("descripcion")%></p>
+                                        <p class="card-text">$<%#Eval("precio")%></p>
+                                        <asp:Button
+                                            ID="btnQuitarDelCarrito"
+                                            CssClass="btn btn-primary"
+                                            Text="Quitar del carrito"
+                                            CommandArgument='<%#Eval("id")%>'
+                                            CommandName="articuloAEliminar"
+                                            runat="server"
+                                            OnClick="btnQuitarDelCarrito_Click" />
+                                    </div>
 
-                    <div class="card mb-3" style="max-width: 540px;">
-                        <div class="row no-gutters">
-                            <div class="col-md-4">
-                                <img src="<%#Eval("imagen")%>" class="card-img">
-                            </div>
-                            <div class="col-md-8">
-                                <div class="card-body">
-                                    <h5 class="card-title"><%#Eval("nombre")%></h5>
-                                    <p class="card-text"><%#Eval("descripcion")%></p>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                        </div>
 
-                </ItemTemplate>
-            </asp:Repeater>
+                    </ItemTemplate>
+                </asp:Repeater>
+            </div>
         </div>
 
         <div class="row">
