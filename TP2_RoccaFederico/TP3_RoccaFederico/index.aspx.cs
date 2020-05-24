@@ -10,7 +10,7 @@ namespace TP3_RoccaFederico
     public partial class _Default : Page
     {
 		public List<Articulo> articulos = new List<Articulo>();
-		public Carrito miCarrito = new Carrito();
+		public CarritoArticulos miCarrito = new CarritoArticulos();
 		protected void Page_Load(object sender, EventArgs e)
         {
 			try
@@ -36,7 +36,8 @@ namespace TP3_RoccaFederico
 			{
 				ArticuloNegocio artNegocio = new ArticuloNegocio();
 				int idArticulo = int.Parse(((Button)sender).CommandArgument);
-				//miCarrito.elementos.Add( artNegocio. );
+				miCarrito.elementos.Add( artNegocio.getArticuloByID(idArticulo) );
+
 			}
 			catch (Exception ex)
 			{
