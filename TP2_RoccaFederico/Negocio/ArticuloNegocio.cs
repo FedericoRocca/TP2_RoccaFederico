@@ -170,5 +170,44 @@ namespace Negocio
 				throw ex;
 			}
 		}
+
+		public Articulo getArticuloByID(int idABuscar)
+		{
+			try
+			{
+				Articulo articulo = new Articulo();
+
+				DDBBGateway data = new DDBBGateway();
+				data.prepareQuery("select ARTICULOS.Id, ARTICULOS.Codigo, ARTICULOS.Nombre, ARTICULOS.Descripcion, MARCAS.Id as 'IdMarca', " +
+								  "MARCAS.Descripcion as 'DescripcionMarca', CATEGORIAS.Id as 'IdCategoria', CATEGORIAS.Descripcion as " +
+								  "'DescripcionCategoria', ARTICULOS.ImagenUrl, ARTICULOS.Precio from ARTICULOS inner join MARCAS on ( " +
+								  "ARTICULOS.IdMarca = MARCAS.Id ) inner join CATEGORIAS on ( ARTICULOS.IdCategoria = CATEGORIAS.Id ) " +
+								  "where ARTICULOS.ID = @buscarID");
+				data.addParameter("@buscarID", idABuscar);
+				data.sendQuery();
+				while (data.getReader().Read())
+				{
+					Articulo aux = new Articulo();
+					aux.id = (int)data.getReader()["Id"];
+					aux.codigo = (string)data.getReader()["Codigo"];
+					aux.nombre = (string)data.getReader()["Nombre"];
+					aux.descripcion = (string)data.getReader()["Descripcion"];
+					aux.marca.id = (int)data.getReader()["IdMarca"];
+					aux.marca.descripcion = (string)data.getReader()["DescripcionMarca"];
+					aux.categoria.id = (int)data.getReader()["IdCategoria"];
+					aux.categoria.descripcion = (string)data.getReader()["DescripcionCategoria"];
+					aux.imagen = (string)data.getReader()["ImagenUrl"];
+					aux.precio = double.Parse(data.getReader()["Precio"].ToString());
+
+					articulo = aux;
+				}
+
+				return articulo;
+			}
+			catch (Exception ex)
+			{
+				throw ex;
+			}
+		}
 	}
 }

@@ -4,24 +4,29 @@
     <div class="row">
         <%-- Row de navbar superior --%>
     </div>
-        <div class="row">
-            <%-- Row tarjetas --%>
-            <div class="card-deck">
-            <%
-                foreach (var item in articulos)
-                {%>
-                    <div class="card" style="width: 18rem;">
-                        <img src="<% = item.imagen %>" class="card-img-top">
+    <div class="row">
+        <%-- Row tarjetas --%>
+        <div class="card-deck">
+            <asp:Repeater runat="server" ID="articulosRepeater">
+                <ItemTemplate>
+                    <div class="card">
+                        <img src="<%#Eval("imagen") %>" class="card-img-top">
                         <div class="card-body">
-                            <h5 class="card-title"><% = item.nombre %></h5>
-                            <p class="card-text"><% = item.descripcion %></p>
+                            <h5 class="card-title"><%#Eval("nombre")%></h5>
+                            <p class="card-text"><%#Eval("descripcion")%></p>
                         </div>
-                        <div class="card-body">
-                            <a href="index.aspx?artID=<% = item.id.ToString() %>" class="btn btn-primary btn-block">Agregar al carrito</a>
-                        </div>
+                        <asp:Button 
+                            ID="btnAgregarAlCarrito" 
+                            CssClass="btn btn-primary"
+                            Text="Comprar" 
+                            CommandArgument='<%#Eval("id")%>'
+                            CommandName="articuloSeleccionado" 
+                            runat="server"
+                            onclick="btnAgregarAlCarrito_Click"/>
                     </div>
-            
-            <%}%>
-            </div>
+                </ItemTemplate>
+            </asp:Repeater>
+
         </div>
+    </div>
 </asp:Content>
