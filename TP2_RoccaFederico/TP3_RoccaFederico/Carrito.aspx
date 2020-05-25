@@ -15,15 +15,25 @@
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-
+            <div class="collapse navbar-collapse d-flex justify-content-start" id="navbarSupportedContent2">
+                <a href="Index.aspx" class="btn btn-outline-success my-2 my-sm-0">Seguir comprando</a>
+            </div>
             <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarSupportedContent">
-                <a href="Carrito.aspx" class="btn btn-outline-success my-2 my-sm-0">Mi carrito de compra<%-- (<% = miCarrito.elementos.Count() %>)--%></a>
+                <a href="Carrito.aspx" class="btn btn-outline-success my-2 my-sm-0">Mi carrito de compra(<% = carritoArticulos.elementos.Count() %>)</a>
             </div>
         </nav>
 
         <div class="row">
         </div>
 
+        <% if (carritoArticulos.elementos.Count <= 0)
+            {
+                %><h5>No tenés articulos cargados en el carrito</h5>
+        <%
+            }
+            else
+            {
+        %>
         <div class="row">
             <div class="card-columns">
                 <asp:Repeater runat="server" ID="carritoRepeater">
@@ -57,6 +67,8 @@
                 </asp:Repeater>
             </div>
         </div>
+        <%
+            }%>
 
         <div class="row">
         </div>
