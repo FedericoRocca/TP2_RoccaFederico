@@ -10,14 +10,15 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <%-- navbar, cabecera --%>
+        <div class="container">
+            <%-- navbar, cabecera --%>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse d-flex justify-content-start" id="navbarSupportedContent2">
-                <a href="Index.aspx" class="btn btn-outline-success my-2 my-sm-0">Seguir comprando</a>
-            </div>
+            <a class="navbar-brand" href="index.aspx">
+                <img src="/Miscelaneo/Mercadopreso.png" width="100" height="45" class="d-inline-block align-top">
+            </a>
             <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarSupportedContent">
                 <a href="Carrito.aspx" class="btn btn-outline-success my-2 my-sm-0">Mi carrito de compra(<% = carritoArticulos.elementos.Count() %>)</a>
             </div>
@@ -28,7 +29,7 @@
 
         <% if (carritoArticulos.elementos.Count <= 0)
             {
-                %><h5>No tenés articulos cargados en el carrito</h5>
+        %><h5>No tenés articulos cargados en el carrito</h5>
         <%
             }
             else
@@ -71,6 +72,7 @@
             }%>
 
         <div class="row">
+        </div>
         </div>
 
     </form>

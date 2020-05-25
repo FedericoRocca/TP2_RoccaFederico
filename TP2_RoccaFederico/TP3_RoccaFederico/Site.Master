@@ -41,14 +41,13 @@
                 <%--Site Scripts--%>
             </Scripts>
         </asp:ScriptManager>
-        <div class="container body-content">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
             <hr />
             <footer>
                 <p>&copy; <%: DateTime.Now.Year %> - Programación III - Trabajo práctico N° 3 - Rocca Federico</p>
             </footer>
-        </div>
+
 
     </form>
 
