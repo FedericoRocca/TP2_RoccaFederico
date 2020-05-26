@@ -10,6 +10,7 @@ namespace TP3_RoccaFederico
     public partial class _Default : Page
     {
 		public List<Articulo> articulos = new List<Articulo>();
+		public List<Categoria> categorias = new List<Categoria>();
 		public CarritoArticulos miCarrito = new CarritoArticulos();
 		protected void Page_Load(object sender, EventArgs e)
         {
@@ -17,10 +18,17 @@ namespace TP3_RoccaFederico
 			{
 				ArticuloNegocio artNegocio = new ArticuloNegocio();
 				articulos = artNegocio.getArticulos();
+
+				CategoriaNegocio catNegocio = new CategoriaNegocio();
+				categorias = catNegocio.getCategorias();
+
 				if(!IsPostBack)
 				{
 					articulosRepeater.DataSource = articulos;
 					articulosRepeater.DataBind();
+
+					repeaterCategorias.DataSource = categorias;
+					repeaterCategorias.DataBind();
 				}
 			}
 			catch (Exception ex)

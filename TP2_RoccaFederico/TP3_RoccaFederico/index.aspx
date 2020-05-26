@@ -16,9 +16,29 @@
                 <a href="Carrito.aspx" class="btn btn-outline-success my-2 my-sm-0">Mi carrito de compra (<% = miCarrito.elementos.Count() %>)</a>
             </div>
         </nav>
+
         <div class="row">
-            <%-- Row de navbar superior --%>
+            <%-- Row de dropdown --%>
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle"
+                    type="button" 
+                    id="dropdownMenuButton" 
+                    data-toggle="dropdown" 
+                    aria-haspopup="true" 
+                    aria-expanded="false">
+                    Filtrar por categorias
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <asp:Repeater runat="server" ID="repeaterCategorias">
+                    <ItemTemplate>
+                        <asp:Button Text=<%#Eval("descripcion")%> CssClass="dropdown-item" runat="server" />
+                    </ItemTemplate>
+                </asp:Repeater>
+
+                </div>
+            </div>
         </div>
+
         <div class="row">
             <%-- Row tarjetas --%>
             <div class="card-columns">
