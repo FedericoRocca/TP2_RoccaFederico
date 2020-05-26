@@ -4,6 +4,7 @@ using Negocio;
 using Dominio;
 using System.Web.UI.WebControls;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace TP3_RoccaFederico
 {
@@ -16,14 +17,15 @@ namespace TP3_RoccaFederico
         {
 			try
 			{
-				ArticuloNegocio artNegocio = new ArticuloNegocio();
-				articulos = artNegocio.getArticulos();
-
 				CategoriaNegocio catNegocio = new CategoriaNegocio();
 				categorias = catNegocio.getCategorias();
 
-				if(!IsPostBack)
+				ArticuloNegocio artNegocio = new ArticuloNegocio();
+				articulos = artNegocio.getArticulos();
+
+				if (!IsPostBack)
 				{
+
 					articulosRepeater.DataSource = articulos;
 					articulosRepeater.DataBind();
 
@@ -58,5 +60,22 @@ namespace TP3_RoccaFederico
 				Response.Redirect("error.aspx");
 			}
 		}
+
+		protected void btnFiltrarCategoria_Click(object sender, EventArgs e)
+		{
+			try
+			{
+				int idCategoria = int.Parse(((Button)sender).CommandArgument);
+				articulos = articulos.Where(x => x.categoria.id == idCategoria).ToList();
+				articulosRepeater.DataSource = articulos;
+				articulosRepeater.DataBind();
+			}
+			catch (Exception ex)
+			{
+				Session.Add(Session.SessionID + "exception", ex);
+				Response.Redirect("error.aspx");
+			}
+		}
+
 	}
 }

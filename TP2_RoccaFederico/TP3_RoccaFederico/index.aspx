@@ -26,12 +26,18 @@
                     data-toggle="dropdown" 
                     aria-haspopup="true" 
                     aria-expanded="false">
-                    Filtrar por categorias
+                    Filtrar por categoría
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                     <asp:Repeater runat="server" ID="repeaterCategorias">
                     <ItemTemplate>
-                        <asp:Button Text=<%#Eval("descripcion")%> CssClass="dropdown-item" runat="server" />
+                        <asp:Button 
+                            Text=<%#Eval("descripcion")%> 
+                            CssClass="dropdown-item"
+                            CommandArgument='<%#Eval("id")%>'
+                            CommandName="categoriaSeleccionada"
+                            OnClick="btnFiltrarCategoria_Click"
+                            runat="server" />
                     </ItemTemplate>
                 </asp:Repeater>
 
