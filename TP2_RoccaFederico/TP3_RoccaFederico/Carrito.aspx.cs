@@ -11,6 +11,7 @@ namespace TP3_RoccaFederico
     public partial class Carrito : System.Web.UI.Page
     {
 		public CarritoArticulos carritoArticulos = new CarritoArticulos();
+        public double totalAPagar = 0;
 		protected void Page_Load(object sender, EventArgs e)
         {
 			try
@@ -20,6 +21,12 @@ namespace TP3_RoccaFederico
 					carritoArticulos = (CarritoArticulos)Session[Session.SessionID + "carrito"];
 					carritoRepeater.DataSource = carritoArticulos.elementos;
 					carritoRepeater.DataBind();
+
+                    foreach (var item in carritoArticulos.elementos)
+                    {
+                        totalAPagar += item.precio;
+                    }
+
 				}
 			}
 			catch (Exception ex)
