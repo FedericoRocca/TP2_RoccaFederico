@@ -43,9 +43,10 @@ namespace TP3_RoccaFederico
                 if(IsPostBack)
                 {
                     int idArticulo = int.Parse(((Button)sender).CommandArgument);
-                    CarritoArticulos aux = new CarritoArticulos();
-                    aux.elementos = carritoArticulos.elementos.Where(x => x.id != idArticulo).ToList();
-                    Session[Session.SessionID + "carrito"] = aux;
+                    //aux.elementos = carritoArticulos.elementos.Where(x => x.id != idArticulo).ToList();
+                    int index = carritoArticulos.elementos.FindIndex(x => x.id == idArticulo);
+                    carritoArticulos.elementos.RemoveAt(carritoArticulos.elementos.FindIndex(x => x.id == idArticulo));
+                    Session[Session.SessionID + "carrito"] = carritoArticulos;
                     Response.Redirect("Carrito.aspx", false);
                 }
             }
