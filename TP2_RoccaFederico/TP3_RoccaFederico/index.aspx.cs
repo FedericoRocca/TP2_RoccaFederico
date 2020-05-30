@@ -57,7 +57,7 @@ namespace TP3_RoccaFederico
                 int idArticulo = int.Parse(((Button)sender).CommandArgument);
                 miCarrito.elementos.Add(artNegocio.getArticuloByID(idArticulo));
                 Session.Add(Session.SessionID + "carrito", miCarrito);
-
+                ScriptManager.RegisterStartupScript(Page, Page.GetType(), "myModal", "$('#modalArticuloAgregadoAlCarrito').modal();", true);
             }
             catch (Exception ex)
             {
@@ -72,6 +72,20 @@ namespace TP3_RoccaFederico
             {
                 int idCategoria = int.Parse(((Button)sender).CommandArgument);
                 articulos = articulos.Where(x => x.categoria.id == idCategoria).ToList();
+                articulosRepeater.DataSource = articulos;
+                articulosRepeater.DataBind();
+            }
+            catch (Exception ex)
+            {
+                Session.Add(Session.SessionID + "exception", ex);
+                Response.Redirect("error.aspx");
+            }
+        }
+
+        protected void btnTodasCategorias_Click(object sender, EventArgs e)
+        {
+            try
+            {
                 articulosRepeater.DataSource = articulos;
                 articulosRepeater.DataBind();
             }
