@@ -41,37 +41,37 @@
                 {
             %>
             <div class="row">
-                <div class="card-columns">
-                    <asp:Repeater runat="server" ID="carritoRepeater">
-                        <ItemTemplate>
-                            <div class="card mb-3" style="max-width: 540px;">
-                                <div class="row no-gutters">
-                                    <div class="col-md-4">
-                                        <img src="<%#Eval("imagen")%>" class="card-img">
-                                    </div>
-                                    <div class="col-md-8">
-                                        <div class="card-body">
-                                            <h5 class="card-title"><%#Eval("nombre")%></h5>
-                                            <p class="card-text"><%#Eval("descripcion")%></p>
-                                            <p class="card-text">$<%#Eval("precio")%></p>
-                                            <asp:Button
-                                                ID="btnQuitarDelCarrito"
-                                                CssClass="btn btn-primary"
-                                                Text="Quitar del carrito"
-                                                CommandArgument='<%#Eval("id")%>'
-                                                CommandName="articuloAEliminar"
-                                                runat="server"
-                                                OnClick="btnQuitarDelCarrito_Click" />
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </div>
-                            </div>
-
-                        </ItemTemplate>
-                    </asp:Repeater>
-                </div>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Articulo</th>
+                            <th scope="col">Detalle</th>
+                            <th scope="col">Precio</th>
+                            <th scope="col"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <asp:Repeater runat="server" ID="carritoRepeater">
+                            <ItemTemplate>
+                                <tr>
+                                    <td><%#Eval("nombre")%></td>
+                                    <td><%#Eval("descripcion")%></td>
+                                    <td>$<%#Eval("precio")%></td>
+                                    <td>
+                                        <asp:Button
+                                            ID="btnQuitarDelCarrito"
+                                            CssClass="btn btn-primary"
+                                            Text="Quitar del carrito"
+                                            CommandArgument='<%#Eval("id")%>'
+                                            CommandName="articuloAEliminar"
+                                            runat="server"
+                                            OnClick="btnQuitarDelCarrito_Click" />
+                                </tr>
+                                </td>
+                            </ItemTemplate>
+                        </asp:Repeater>
+                    </tbody>
+                </table>
             </div>
             <%
                 }%>
